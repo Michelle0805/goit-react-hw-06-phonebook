@@ -3,15 +3,14 @@ import { ContactListItem } from 'components/ContactListItem/ContactListItem';
 import PropTypes from 'prop-types';
 import css from './ContactList.module.css';
 
-export const ContactList =({filterContact, deleteContact})=> {
-  const filteredContacts = filterContact();
+export const ContactList =({contacts, deleteContact})=> {
 
   return (
     <ul className={css.contactList}>
-      {filteredContacts.map(filteredContact => (
+      {contacts.map(contact => (
         <ContactListItem
-          key={filteredContact.id}
-          filteredContact={filteredContact}
+          key={contact.id}
+          filteredContact={contact}
           deleteContact={deleteContact}
         />
       ))}
