@@ -33,12 +33,12 @@ export const App = () => {
     return (
       <div>
         <h1>Phonebook</h1>
-        <ContactForm addContact={handleAddContact} contacts={contacts}/>
+        <ContactForm addContact={handleAddContact} contacts={filteredContacts}/>
 
         <h2>Contacts</h2>
         <Filter filter={filter} setFilter={handleSetFilter} />
         <ContactList
-          filterContact={filteredContacts}
+          contacts={filteredContacts}
           deleteContact={handleDeleteContact}
         />
       </div>
